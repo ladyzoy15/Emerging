@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+venv/
+backend/venv/
+__pycache__/
+backend/**/__pycache__/
+*.pyc
+
+# Builds
+dist/
+frontend/dist/
+build/
+
+# Environment and Local files
+.env
+*.local
+backend/uploads/*
+!backend/uploads/.gitkeep
+backend/receiptai.db
+*.sqlite3
+
+# OS Files
+.DS_Store
+Thumbs.db

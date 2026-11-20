@@ -6,6 +6,6 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 5173,
     watch: { usePolling: true },
-    allowedHosts: ['Carlos-AI.coeofjrmsu.com']
+    allowedHosts: 'all'
   }
 })

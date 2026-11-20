@@ -45,12 +45,12 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        VITE_API_URL: https://Carlos-backend-AI.coeofjrmsu.com
     container_name: receiptai-frontend
     restart: unless-stopped
     ports:
-      - "8300:5173"
-    environment:
-      VITE_API_URL: https://Carlos-backend-AI.coeofjrmsu.com
+      - "8300:80"
     depends_on:
       - backend
     networks:

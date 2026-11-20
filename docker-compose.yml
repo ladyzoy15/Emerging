@@ -8,8 +8,6 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    ports:
-      - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -29,7 +27,7 @@ services:
     container_name: receiptai-backend
     restart: unless-stopped
     ports:
-      - "5000:5000"
+      - "8301:5000"
     environment:
       FLASK_ENV: ${FLASK_ENV}
       SECRET_KEY: ${SECRET_KEY}
@@ -50,9 +48,9 @@ services:
     container_name: receiptai-frontend
     restart: unless-stopped
     ports:
-      - "5173:5173"
+      - "8300:5173"
     environment:
-      VITE_API_URL: http://localhost:5000
+      VITE_API_URL: https://Carlos-backend-AI.coeofjrmsu.com
     depends_on:
       - backend
     networks:
